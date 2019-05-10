@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task-Man</title>
+    <script src="bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="bundle.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <svg height="0">
+      <defs>
+        <filter id="line">
+          <feTurbulence type="fractalNoise" baseFrequency=".5" numOctaves="1" result="noise" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="noise" />
+        </filter>
+        <filter id="text">
+          <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="1" result="noise" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="4" in="SourceGraphic" in2="noise" />
+        </filter>
+      </defs>
+    </svg>
+    <header class="main">
+      <h1 class="" contenteditable="false">Title</h1>
+      <div class="main-menu">
+        <ul class="menu">
+          <li class="change btn-more">Option</li>
+          <li class="add btn-add">New Board</span>
+          <li class="can btn-close">Close</li>
+        </ul>
+      </div>
+    </header>
+    
+    <div class="boards-container">
+    </div>
+
+    <script id="note-template" type="text/template">
+      <div class="body {{color}}" draggable="true" >
+        <p>{{body}}</p>
+      </div>
+      <div class="note-menu">
+        <figure class="chalk-line due-bar bar-0"></figure>
+        <figure class="open"></figure>
+        <span class="due expired chalk-text">
+          <input name="date" type="date" value="{{due}}">
+        </span>
+        <ul class="colors">
+          <li class="y chalk-text">Y<em>yellow</em></li>
+          <li class="o chalk-text">O<em>orange</em></li>
+          <li class="g chalk-text">G<em>green</em></li>
+          <li class="b chalk-text">B<em>blue</em></li>
+          <li class="n selected chalk-text">N<em></em></li>
+        </ul>
+        <span class="del chalk-text">Delete</span>
+        <span class="can chalk-text">X</span>
+        <span class="save chalk-text">🗸</span>
+        <div class="borders chalk-line"></div>
+      </div>
+    </script>
+
+    <script id="board-template" type="text/template">
+        <header>
+          <h2>{{title}}</h2>
+          <div class="menu">
+            <figure class="btn-add"></figure>
+            <figure class="btn-more"></figure>
+            <ul>
+              <li class="del">Delete</li>
+              <li class="up">⮜⮜</li>
+              <li class="down">⮞⮞</li>
+              <li class="done">Done</li>
+            </ul>
+          </div>
+        </header>
+    </script>
+
+  </body>
+</html>

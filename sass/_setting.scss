@@ -1,0 +1,18 @@
+$prime-color: #dbd6d2;
+$prime-bg: #373832;
+$prime-link: #dbd6d2;
+$acc-color: #e32f21;
+
+$note-text:#373832;
+$note-bg: #dbd6d2;
+$note-yellow: #fff568;
+$note-orange: #fdc689;
+$note-green: #c4df9b;
+$note-blue: #9ec2e4;
+
+$glossy: linear-gradient(to left top, rgba(0,0,0,0.1),rgba(255,255,255,.1) );
+$note-glossy: linear-gradient(to right bottom, rgba(0,0,0,0.1),rgba(255,255,255,.2) );
+
+a {
+  color: $prime-link;
+}
